@@ -11,7 +11,6 @@ class Question
   end
 
   def ask
-
     puts @questions[@number_question]
     user_input = nil
 
@@ -21,20 +20,15 @@ class Question
     end
 
     # Увеличивает количество баллов в зависимости от выбранного ответа и ведет подсчет
-
-    if user_input == "yes"
-      @points += 2
-    elsif user_input == "no"
-      @points += 0
-    else
-      @points += 1
-    end
+    @points += 2 if user_input == "yes"
+    @points += 0 if user_input == "no"
+    @points += 1 if user_input == "sometimes"
 
     @number_question += 1
 
   end
 
-  def stop
+  def finished?
     @number_question >= @questions.length
   end
 

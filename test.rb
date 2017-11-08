@@ -1,6 +1,6 @@
 require 'unicode'
-require_relative 'question'
-require_relative 'answers'
+require_relative 'lib/question'
+require_relative 'lib/answers'
 current_path = File.dirname(__FILE__)
 
 name = ARGV[0]
@@ -21,7 +21,7 @@ answers = current_path + "/data/answers.txt"
 my_test = Question.new(questions)
 your_answers = Answers.new(answers)
 
-until my_test.stop
+until my_test.finished?
   my_test.ask
 end
 

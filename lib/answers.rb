@@ -1,4 +1,3 @@
-
 class Answers
 
   def initialize(answers)
@@ -8,12 +7,11 @@ class Answers
   end
 
   # Метод, который выводит результат в зависимости от набранных баллов
-
   def print_result(question)
     puts "\nВаш результат теста (ответов 'да' - #{question.result}):"
 
     case question.result
-    when 30..32 # 32 максимум, т.к. если всегда отвечать yes, то результат = 32 (!)
+    when 30..32
       puts @results[0]
     when 25..29
       puts @results[1]
