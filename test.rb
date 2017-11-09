@@ -3,13 +3,7 @@ require_relative 'lib/question'
 require_relative 'lib/answers'
 current_path = File.dirname(__FILE__)
 
-name = ARGV[0]
-
-if name == nil
-  name = "Анонимус"
-else
-  name = name
-end
+name = ARGV[0] || "Анонимус"
 
 puts "Добрый день, #{name}. Рад, что вы обратились к нашим услугам. Пожалуйста, ответьте"+
   " честно на несколько вопросов. А мы по завершению тестирование сформируем экспертное" +

@@ -1,5 +1,4 @@
 class Answers
-
   def initialize(answers)
     file = File.new(answers, "r:UTF-8")
     @results = file.readlines
@@ -8,9 +7,8 @@ class Answers
 
   # Метод, который выводит результат в зависимости от набранных баллов
   def print_result(question)
-    puts "\nВаш результат теста (ответов 'да' - #{question.result}):"
-
-    case question.result
+    puts "\nВаш результат теста (ответов 'да' - #{question.points}):"
+    case question.points
     when 30..32
       puts @results[0]
     when 25..29

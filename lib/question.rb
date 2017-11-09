@@ -1,11 +1,10 @@
-
 class Question
+  attr_accessor :points
 
   def initialize(questions)
     file = File.new(questions, "r:UTF-8")
     @questions = file.readlines
     file.close
-
     @number_question = 0 # Порядковая нумерация вопросов с 0
     @points = 0
   end
@@ -23,16 +22,10 @@ class Question
     @points += 2 if user_input == "yes"
     @points += 0 if user_input == "no"
     @points += 1 if user_input == "sometimes"
-
     @number_question += 1
-
   end
 
   def finished?
     @number_question >= @questions.length
-  end
-
-  def result
-    @points
   end
 end
